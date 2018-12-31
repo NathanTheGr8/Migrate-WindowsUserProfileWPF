@@ -5,11 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Migrate_WindowsUserProfile"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Migration Assistant by Nick Rodriguez" Height="550" Width="1000" MinWidth="1000" MinHeight="550">
     <Grid>
-        <TabControl HorizontalAlignment="Left" Margin="10,10,0,10" Width="400">
+        <TabControl HorizontalAlignment="Left" Margin="10,10,0,10" Width="480">
             <TabItem Header="Old Computer">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <GroupBox Header="Computer Info" HorizontalAlignment="Left" Height="110" Margin="10,0,0,0" VerticalAlignment="Top" Width="454" BorderBrush="Black">
+                        <Grid>
+                            <Label Content="Old Computer" HorizontalAlignment="Left" Margin="10,24,0,0" VerticalAlignment="Top"/>
+                            <Label Content="New Computer" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
+                            <Label Content="Computer Name" HorizontalAlignment="Left" Margin="100,0,0,0" VerticalAlignment="Top"/>
+                            <Label Content="IP Address" HorizontalAlignment="Left" Margin="225,0,0,0" VerticalAlignment="Top"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="100,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="ANEXAMPLENAME"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="100,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="225,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" Text="192.168.234.244"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="225,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98"/>
+                            <Button Content="Test Connection" HorizontalAlignment="Left" Margin="328,26,0,0" VerticalAlignment="Top" Width="104" Height="23"/>
+                            <CheckBox Content="Connected" HorizontalAlignment="Left" Margin="328,55,0,0" VerticalAlignment="Top" Width="104" Height="21"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Data to Include" HorizontalAlignment="Left" Height="210" Margin="10,115,0,0" VerticalAlignment="Top" Width="218" BorderBrush="Black">
+                        <Grid>
+                            <CheckBox Content="Connected" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" Height="21"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Save State Destination" HorizontalAlignment="Left" Height="100" Margin="246,115,0,0" VerticalAlignment="Top" Width="218" BorderBrush="Black">
+                        <Grid>
+                            <CheckBox Content="Connected" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" Height="21"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Profile Selection" HorizontalAlignment="Left" Height="100" Margin="246,220,0,0" VerticalAlignment="Top" Width="218" BorderBrush="Black">
+                        <Grid>
+                            <CheckBox Content="Connected" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" Height="21"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Extra Directories to Include" HorizontalAlignment="Left" Height="147" Margin="10,325,0,-1" VerticalAlignment="Top" Width="218" BorderBrush="Black">
+                        <Grid>
+                            <ListBox Height="125" VerticalAlignment="Top"/>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
             </TabItem>
             <TabItem Header="New Computer">
                 <Grid Background="#FFE5E5E5"/>
@@ -21,13 +56,12 @@
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
         </TabControl>
-        <RichTextBox Margin="415,33,10,10" FontFamily="Consolas" FontSize="10" Background="Black" Foreground="White">
+        <RichTextBox Margin="495,33,10,10" FontFamily="Consolas" Background="Black" Foreground="White">
             <FlowDocument>
                 <Paragraph>
                     <Run Text="RichTextBox"/>
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-
     </Grid>
 </Window>
