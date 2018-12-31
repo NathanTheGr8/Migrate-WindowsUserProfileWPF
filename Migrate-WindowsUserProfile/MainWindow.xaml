@@ -1,0 +1,33 @@
+﻿<Window x:Class="Migrate_WindowsUserProfile.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Migrate_WindowsUserProfile"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Margin="10,10,0,10" Width="400">
+            <TabItem Header="Old Computer">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="New Computer">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Email Settings">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Scripts">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+        <RichTextBox Margin="415,33,10,10" FontFamily="Consolas" FontSize="10" Background="Black" Foreground="White">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="RichTextBox"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+    </Grid>
+</Window>
