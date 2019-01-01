@@ -7,10 +7,18 @@
         mc:Ignorable="d"
         Title="Migration Assistant by Nick Rodriguez" Height="550" Width="1000" MinWidth="1000" MinHeight="550">
     <Grid>
-        <TabControl HorizontalAlignment="Left" Margin="10,10,0,10" Width="480">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl Margin="10,10,0,10" Grid.Column="0">
             <TabItem Header="Old Computer">
                 <Grid Background="#FFE5E5E5">
-                    <GroupBox Header="Computer Info" HorizontalAlignment="Left" Height="110" Margin="10,0,0,0" VerticalAlignment="Top" Width="454" BorderBrush="Black">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <GroupBox Header="Computer Info" Height="110" Margin="10,10,10,5" BorderBrush="Black" Grid.Row="0">
                         <Grid>
                             <Label Content="Old Computer" HorizontalAlignment="Left" Margin="10,24,0,0" VerticalAlignment="Top"/>
                             <Label Content="New Computer" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
@@ -24,48 +32,85 @@
                             <CheckBox Content="Connected" HorizontalAlignment="Left" Margin="328,55,0,0" VerticalAlignment="Top" Width="104" Height="21"/>
                         </Grid>
                     </GroupBox>
-                    <GroupBox Header="Data to Include" HorizontalAlignment="Left" Height="162" Margin="10,115,0,0" VerticalAlignment="Top" Width="218" BorderBrush="Black">
-                        <Grid>
-                            <CheckBox Content="AppData" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" Height="21" Margin="10,10,0,0"/>
-                            <CheckBox Content="Local AppData" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" Height="21" Margin="10,31,0,0"/>
-                            <CheckBox Content="Printers" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" Height="21" Margin="10,52,0,0"/>
-                            <CheckBox Content="Recycle Bin" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" Height="21" Margin="10,73,0,0"/>
-                            <CheckBox Content="My Documents" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" Height="21" Margin="10,94,0,0"/>
-                            <CheckBox Content="Wallpapers" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" Height="21" Margin="10,115,0,0"/>
-                            <CheckBox Content="Downloads" HorizontalAlignment="Left" VerticalAlignment="Top" Width="92" Height="21" Margin="114,10,0,0"/>
-                            <CheckBox Content="Favorites" HorizontalAlignment="Left" VerticalAlignment="Top" Width="92" Height="21" Margin="114,31,0,0"/>
-                            <CheckBox Content="My Music" HorizontalAlignment="Left" VerticalAlignment="Top" Width="92" Height="21" Margin="114,52,0,0"/>
-                            <CheckBox Content="My Pictures" HorizontalAlignment="Left" VerticalAlignment="Top" Width="92" Height="21" Margin="114,73,0,0"/>
-                            <CheckBox Content="My video" HorizontalAlignment="Left" VerticalAlignment="Top" Width="92" Height="21" Margin="114,94,0,0"/>
-                            <CheckBox Content="Desktop" HorizontalAlignment="Left" VerticalAlignment="Top" Width="92" Height="21" Margin="114,115,0,0"/>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <GroupBox Header="Data to Include" HorizontalAlignment="Stretch" Height="162" Margin="10,5,5,5" VerticalAlignment="Top" BorderBrush="Black" Grid.Row="0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <CheckBox Content="AppData" Grid.Column="0" Grid.Row="0"/>
+                                    <CheckBox Content="Local AppData" Grid.Column="0" Grid.Row="1"/>
+                                    <CheckBox Content="Printers" Grid.Column="0" Grid.Row="2"/>
+                                    <CheckBox Content="Recycle Bin" Grid.Column="0" Grid.Row="3"/>
+                                    <CheckBox Content="My Documents" Grid.Column="0" Grid.Row="4"/>
+                                    <CheckBox Content="Wallpapers" Grid.Column="0" Grid.Row="5"/>
+
+                                    <CheckBox Content="Downloads" Grid.Column="1" Grid.Row="0" />
+                                    <CheckBox Content="Favorites" Grid.Column="1" Grid.Row="1" />
+                                    <CheckBox Content="My Music" Grid.Column="1" Grid.Row="2"/>
+                                    <CheckBox Content="My Pictures" Grid.Column="1" Grid.Row="3"/>
+                                    <CheckBox Content="My video" Grid.Column="1" Grid.Row="4"/>
+                                    <CheckBox Content="Desktop" Grid.Column="1" Grid.Row="5"/>
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Header="Extra Directories to Include" Margin="10,5,5,10" BorderBrush="Black" Grid.Row="1">
+                                <Grid>
+                                    <DataGrid />
+                                    <Button Content="-" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="26" Height="26" FontSize="16"/>
+                                    <Button Content="+" Margin="26,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="26" Height="26" FontSize="16"/>
+                                </Grid>
+                            </GroupBox>
                         </Grid>
-                    </GroupBox>
-                    <GroupBox Header="Save State Destination" HorizontalAlignment="Left" Height="100" Margin="246,115,0,0" VerticalAlignment="Top" Width="218" BorderBrush="Black">
-                        <Grid>
-                            <CheckBox Content="Save On New Computer" HorizontalAlignment="Center" VerticalAlignment="Top" Width="186" Height="21" Margin="10,32,0,0"/>
-                            <TextBox HorizontalAlignment="Left" Height="23" Margin="10,4,0,0" TextWrapping="Wrap" Text="c:\Temp\MigrationStore" VerticalAlignment="Top" Width="186"/>
-                            <Button Content="Change" HorizontalAlignment="Left" Margin="15,53,0,0" VerticalAlignment="Top" Width="75"/>
-                            <Button Content="Reset" HorizontalAlignment="Left" Margin="121,53,0,0" VerticalAlignment="Top" Width="75"/>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <GroupBox Header="Save State Destination" Height="100" Margin="5,5,10,5" BorderBrush="Black" Grid.Row="0">
+                                <Grid>
+                                    <CheckBox Content="Save On New Computer" HorizontalAlignment="Center" VerticalAlignment="Top" Width="186" Height="21" Margin="10,32,0,0"/>
+                                    <TextBox HorizontalAlignment="Left" Height="23" Margin="10,4,0,0" TextWrapping="Wrap" Text="c:\Temp\MigrationStore" VerticalAlignment="Top" Width="186"/>
+                                    <Button Content="Change" HorizontalAlignment="Left" Margin="15,53,0,0" VerticalAlignment="Top" Width="75"/>
+                                    <Button Content="Reset" HorizontalAlignment="Left" Margin="121,53,0,0" VerticalAlignment="Top" Width="75"/>
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Header="Profile Selection" Height="105" Margin="5,5,10,5" BorderBrush="Black" Grid.Row="1">
+                                <Grid>
+                                    <Button Content="Button" HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top" Width="186"/>
+                                    <CheckBox Content="Migrate all profiles logged into&#xD;&#xA;within this amount of days:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="186" Height="35" Margin="10,34,0,0"/>
+                                    <TextBox HorizontalAlignment="Left" Height="23" Margin="177,46,0,0" TextWrapping="Wrap" Text="90" VerticalAlignment="Top" Width="19"/>
+                                </Grid>
+                            </GroupBox>
+                            <Button Content="Custom XML(s)" Margin="5,5,10,5" Grid.Row="2"/>
+                            <CheckBox Content="Encrypt Captured Data" Margin="5,5,10,5" Grid.Row="3"/>
+                            <CheckBox Content="Uncompressed Storage" Margin="5,5,10,5" Grid.Row="4"/>
+                            <Button Content="Migrate" FontWeight="Bold" FontSize="18" Margin="5,5,10,10" Grid.Row="5"/>
                         </Grid>
-                    </GroupBox>
-                    <GroupBox Header="Profile Selection" HorizontalAlignment="Left" Height="105" Margin="246,220,0,0" VerticalAlignment="Top" Width="218" BorderBrush="Black">
-                        <Grid>
-                            <Button Content="Button" HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top" Width="186"/>
-                            <CheckBox Content="Migrate all profiles logged into&#xD;&#xA;within this amount of days:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="186" Height="35" Margin="10,34,0,0"/>
-                            <TextBox HorizontalAlignment="Left" Height="23" Margin="177,46,0,0" TextWrapping="Wrap" Text="90" VerticalAlignment="Top" Width="19"/>
-                        </Grid>
-                    </GroupBox>
-                    <GroupBox Header="Extra Directories to Include" HorizontalAlignment="Left" Margin="10,282,0,10" Width="218" BorderBrush="Black">
-                        <Grid>
-                            <DataGrid HorizontalAlignment="Left" Width="206"/>
-                            <Button Content="-" HorizontalAlignment="Center" Margin="0,132,180,0" Width="26" FontSize="16"/>
-                            <Button Content="+" HorizontalAlignment="Center" Margin="26,132,156,0" Width="24" FontSize="16"/>
-                        </Grid>
-                    </GroupBox>
-                    <Button Content="Custom XML(s)" HorizontalAlignment="Left" Margin="246,330,0,0" VerticalAlignment="Top" Width="218"/>
-                    <CheckBox Content="CheckBox" HorizontalAlignment="Center" Margin="246,355,0,0" VerticalAlignment="Top" Width="218"/>
-                    <CheckBox Content="CheckBox" HorizontalAlignment="Center" Margin="246,375,0,0" VerticalAlignment="Top" Width="218"/>
-                    <Button Content="Migrate" HorizontalAlignment="Left" Margin="246,395,0,10" Width="218" FontWeight="Bold" FontSize="18"/>
+                    </Grid>
                 </Grid>
             </TabItem>
             <TabItem Header="New Computer">
@@ -78,7 +123,7 @@
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
         </TabControl>
-        <RichTextBox Margin="495,33,10,10" FontFamily="Consolas" Background="Black" Foreground="White">
+        <RichTextBox Margin="0,33,10,10" FontFamily="Consolas" Background="Black" Foreground="White" Grid.Column="1">
             <FlowDocument>
                 <Paragraph>
                     <Run Text="RichTextBox"/>
